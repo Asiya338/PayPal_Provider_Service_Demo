@@ -17,9 +17,7 @@ import com.example.demo.paypal.req.OrderRequest;
 import com.example.demo.paypal.req.PaymentSource;
 import com.example.demo.paypal.req.Paypal;
 import com.example.demo.paypal.req.PurchaseUnits;
-import com.example.demo.paypal.res.PaypalOrder;
 import com.example.demo.pojo.CreateOrderReq;
-import com.example.demo.pojo.CreateOrderRes;
 import com.example.demo.util.JsonUtil;
 
 import lombok.RequiredArgsConstructor;
@@ -28,12 +26,12 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class CreateOrderHelper {
+public class CreateOrderHelperReq {
 
 	private final JsonUtil jsonUtil;
 
 	@Value("${paypal.create.order.url}")
-	private String createOrderUrl;
+	public String createOrderUrl;
 
 	public HttpRequest prepareCreateOrderReq(CreateOrderReq createOrderReq, String accessToken) {
 		String requestAsJson;
@@ -76,7 +74,7 @@ public class CreateOrderHelper {
 
 		// Prepare Amount + PurchaseUnit
 		Amount amount = new Amount();
-		amount.setCurrencyCode(createOrderReq.getCurrencyCode());
+//		amount.setCurrencyCode(createOrderReq.getCurrencyCode());
 		String value = String.format(Constant.TWO_DECIMAL_FORMAT, createOrderReq.getAmount());
 		amount.setValue(value);
 
@@ -107,17 +105,4 @@ public class CreateOrderHelper {
 		return headers;
 	}
 
-	public CreateOrderRes toOrderResponse(PaypalOrder paypalOrderRes) {
-		CreateOrderRes createOrderRes = new CreateOrderRes();
-		createOrderRes.setOrderId(paypalOrderRes.getId());
-		createOrderRes.setPaymentStatus(paypalOrderRes.getStatus());
-
-		String redirectUrl = paypalOrderRes.getLinks().stream()
-				.filter(link -> "payer-action".equalsIgnoreCase(link.getRel())).findFirst().map(link -> link.getHref())
-				.orElse("");
-
-		createOrderRes.setRedirectUrl(redirectUrl);
-
-		return createOrderRes;
-	}
 }

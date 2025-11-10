@@ -5,13 +5,13 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.http.HttpRequest;
 import com.example.demo.http.HttpServiceEngine;
-import com.example.demo.paypal.res.PaypalOrder;
 import com.example.demo.pojo.CreateOrderReq;
 import com.example.demo.pojo.CreateOrderRes;
+import com.example.demo.service.PaymentValidator;
 import com.example.demo.service.TokenService;
-import com.example.demo.service.helper.CreateOrderHelper;
+import com.example.demo.service.helper.CreateOrderHelperReq;
+import com.example.demo.service.helper.CreateOrderHelperRes;
 import com.example.demo.service.interfaces.PaymentService;
-import com.example.demo.util.JsonUtil;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,24 +20,27 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RequiredArgsConstructor
 public class PaymentServiceImpl implements PaymentService {
-	private final JsonUtil jsonUtil;
+	private final PaymentValidator paymentValidator;
 	private final HttpServiceEngine httpServiceEngine;
-	private final CreateOrderHelper createOrderHelper;
+	private final CreateOrderHelperReq createOrderHelperReq;
+	private final CreateOrderHelperRes createOrderHelperRes;
+
 	private final TokenService tokenService;
 
 	@Override
 	public CreateOrderRes createOrder(CreateOrderReq createOrderReq) {
+		paymentValidator.validateService(createOrderReq);
+		log.info("Create order request in payment service impl || CreateOrderReq : {} ", createOrderReq);
+
 		String accessToken = tokenService.getAccessToken();
 		log.info("access_token from token service : {} ", accessToken);
 
-		HttpRequest httpRequest = createOrderHelper.prepareCreateOrderReq(createOrderReq, accessToken);
+		HttpRequest httpRequest = createOrderHelperReq.prepareCreateOrderReq(createOrderReq, accessToken);
 
 		ResponseEntity<String> httpResponse = httpServiceEngine.makeHttpCall(httpRequest);
 		log.info("HTTP Response from Create Order : {}  ", httpResponse);
 
-		PaypalOrder paypalOrderRes = jsonUtil.fromJson(httpResponse.getBody(), PaypalOrder.class);
-
-		CreateOrderRes createOrderRes = createOrderHelper.toOrderResponse(paypalOrderRes);
+		CreateOrderRes createOrderRes = createOrderHelperRes.handlePaypalResponse(httpResponse);
 		log.info("Create order response  || CreateOrderRes : {}", createOrderRes);
 
 		return createOrderRes;

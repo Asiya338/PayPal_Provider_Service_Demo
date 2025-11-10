@@ -22,4 +22,7 @@ public class Constant {
 	public static final String TWO_DECIMAL_FORMAT = "%.2f";
 
 	public static final String PAY_PAL_REQUEST_ID = "PayPal-Request-Id";
+
+	public static final String PAYER_ACTION_REQUIRED = "PAYER_ACTION_REQUIRED";
+
 }
