@@ -1,0 +1,8 @@
+package com.example.demo.paypal.req;
+
+import lombok.Data;
+
+@Data
+public class PaymentSource {
+	private Paypal paypal;
+}

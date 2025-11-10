@@ -25,8 +25,8 @@ public class HttpServiceEngine {
 
 			return httpResponse;
 		} catch (Exception e) {
-			log.error("Error while getting access token: {} ", e.getMessage());
-			throw new RuntimeException("Exception occured in HttpServicEngine");
+			log.error("Error while making http api request from HttpServiceEngine | : {} ", e.getMessage());
+			throw new RuntimeException("Exception occured in HttpServiceEngine");
 		}
 
 	}

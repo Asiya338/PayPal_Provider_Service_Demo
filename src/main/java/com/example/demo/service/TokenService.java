@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -34,12 +33,12 @@ public class TokenService {
 	@Value("${paypal.oauth.url}")
 	private String oauthUrl;
 
-	public ResponseEntity<String> getAccessToken() {
+	public String getAccessToken() {
 		log.info("getting access token from token service");
 
 		if (accessToken != null) {
 			log.info("returning cached access token");
-			return ResponseEntity.ok(accessToken);
+			return accessToken;
 		}
 
 		log.info("No cached access token found, calling oauth service");
@@ -64,7 +63,7 @@ public class TokenService {
 
 		log.info("Http request : {} ", httpRequest);
 
-		return httpServiceEngine.makeHttpCall(httpRequest);
+		return httpServiceEngine.makeHttpCall(httpRequest).getBody();
 
 	}
 }
