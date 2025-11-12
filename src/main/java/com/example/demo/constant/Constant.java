@@ -5,6 +5,10 @@ public class Constant {
 	private Constant() {
 	};
 
+	public static final String NULL_BODY = "{}";
+
+	public static final String ORDER_ID = "{orderId}";
+
 	public static final String CLIENT_CREDENTIALS = "client_credentials";
 
 	public static final String GRANT_TYPE = "grant_type";

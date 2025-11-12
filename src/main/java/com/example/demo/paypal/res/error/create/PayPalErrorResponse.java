@@ -1,4 +1,4 @@
-package com.example.demo.paypal.res.error;
+package com.example.demo.paypal.res.error.create;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.demo.paypal.res;
+package com.example.demo.paypal.res.create;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

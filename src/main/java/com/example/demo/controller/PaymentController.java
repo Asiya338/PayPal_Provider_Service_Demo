@@ -1,9 +1,11 @@
 package com.example.demo.controller;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.pojo.CaptureOrderRes;
 import com.example.demo.pojo.CreateOrderReq;
 import com.example.demo.pojo.CreateOrderRes;
 import com.example.demo.service.interfaces.PaymentService;
@@ -23,6 +25,16 @@ public class PaymentController {
 
 		CreateOrderRes response = paymentService.createOrder(createOrderReq);
 		log.info("response from payment service : {} ", response);
+
+		return response;
+	}
+
+	@PostMapping("/{orderId}/capture")
+	public CaptureOrderRes captureOrder(@PathVariable String orderId) {
+		log.info("Order ID to be captured : {}", orderId);
+
+		CaptureOrderRes response = paymentService.captureOrder(orderId);
+		log.info("Response from payment service || CAPTURE ORDER RESPONSE : {} ", response);
 
 		return response;
 	}

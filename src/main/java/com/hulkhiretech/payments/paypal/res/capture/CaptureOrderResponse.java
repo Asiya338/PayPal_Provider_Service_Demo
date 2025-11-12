@@ -1,4 +1,4 @@
-package com.example.demo.paypal.res;
+package com.hulkhiretech.payments.paypal.res.capture;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
-public class PaypalOrder {
+public class CaptureOrderResponse {
 
 	private String id;
 	private String status;
@@ -15,6 +15,10 @@ public class PaypalOrder {
 	@JsonProperty("payment_source")
 	private PaymentSource paymentSource;
 
-	private List<PaypalLinks> links;
+	@JsonProperty("purchase_units")
+	private List<PurchaseUnits> pruchaseUnits;
+
+	private Payer payer;
+	private List<Link> links;
 
 }
