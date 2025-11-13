@@ -8,6 +8,7 @@ import com.example.demo.http.HttpServiceEngine;
 import com.example.demo.pojo.CaptureOrderRes;
 import com.example.demo.pojo.CreateOrderReq;
 import com.example.demo.pojo.CreateOrderRes;
+import com.example.demo.pojo.ShowOrderRes;
 import com.example.demo.service.CreateOrderResValidator;
 import com.example.demo.service.PaymentValidator;
 import com.example.demo.service.TokenService;
@@ -15,6 +16,8 @@ import com.example.demo.service.helper.CaptureOrderHelperReq;
 import com.example.demo.service.helper.CaptureOrderHelperRes;
 import com.example.demo.service.helper.CreateOrderHelperReq;
 import com.example.demo.service.helper.CreateOrderHelperRes;
+import com.example.demo.service.helper.ShowOrderHelperReq;
+import com.example.demo.service.helper.ShowOrderHelperRes;
 import com.example.demo.service.interfaces.PaymentService;
 
 import lombok.RequiredArgsConstructor;
@@ -33,6 +36,8 @@ public class PaymentServiceImpl implements PaymentService {
 	private final CreateOrderResValidator createOrderResValidator;
 	private final CaptureOrderHelperReq captureOrderHelperReq;
 	private final TokenService tokenService;
+	private final ShowOrderHelperReq showOrderHelperReq;
+	private final ShowOrderHelperRes showOrderHelperRes;
 
 	private static CreateOrderRes createOrderRes;
 	private static String accessToken;
@@ -70,5 +75,19 @@ public class PaymentServiceImpl implements PaymentService {
 		log.info("Capture Order Response || CaptureOrderRes : {}  ", captureOrderRes);
 
 		return captureOrderRes;
+	}
+
+	@Override
+	public ShowOrderRes showOrder(String orderId) {
+		log.info("order Id in SHOW Order request : {} ", orderId);
+
+		ResponseEntity<String> httpResponse = httpServiceEngine
+				.makeHttpCall(showOrderHelperReq.prepareCaptureOrderReq(orderId, accessToken));
+		log.info("Http Response for Show Order : {} ", httpResponse);
+
+		ShowOrderRes showOrderRes = showOrderHelperRes.prepareShowResponse(httpResponse);
+		log.info("Show Order Response || ShowOrderRes : {}  ", showOrderRes);
+
+		return showOrderRes;
 	}
 }

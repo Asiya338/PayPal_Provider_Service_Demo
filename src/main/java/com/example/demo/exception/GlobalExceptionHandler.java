@@ -32,4 +32,14 @@ public class GlobalExceptionHandler {
 
 		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
 	}
+
+	@ExceptionHandler(ResourceNotFoundException.class)
+	public ResponseEntity<ErrorResponse> resourceNotFoundEception(ResourceNotFoundException ex) {
+		log.error("Handling ResourceNotFound Exception: {}", ex.getErrorMessage(), ex);
+
+		ErrorResponse errorResponse = new ErrorResponse(ex.getErrorCode(), ex.getErrorMessage());
+
+		return ResponseEntity.status(ex.getHttpStatus()).body(errorResponse);
+	}
+
 }

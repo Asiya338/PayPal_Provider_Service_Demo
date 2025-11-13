@@ -1,4 +1,4 @@
-package com.hulkhiretech.payments.paypal.res.capture;
+package com.example.demo.paypal.res.show;
 
 import lombok.Data;
 

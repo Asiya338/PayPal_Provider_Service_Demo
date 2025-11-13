@@ -1,4 +1,4 @@
-package com.hulkhiretech.payments.paypal.res.capture;
+package com.example.demo.paypal.res.show;
 
 import java.util.List;
 
@@ -7,18 +7,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
-public class CaptureOrderResponse {
-
+public class ShowOrderResponse {
 	private String id;
+	private String intent;
 	private String status;
 
 	@JsonProperty("payment_source")
 	private PaymentSource paymentSource;
 
 	@JsonProperty("purchase_units")
-	private List<PurchaseUnits> pruchaseUnits;
+	private List<PurchaseUnit> purchaseUnits;
 
-	private Payer payer;
+	@JsonProperty("create_time")
+	private String createTime;
+
 	private List<Link> links;
 
 }

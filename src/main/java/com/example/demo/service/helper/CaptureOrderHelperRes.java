@@ -7,11 +7,11 @@ import org.springframework.stereotype.Service;
 import com.example.demo.constant.ErrorCodeEnum;
 import com.example.demo.exception.PayPalProviderException;
 import com.example.demo.exception.ResourceNotFoundException;
+import com.example.demo.paypal.res.capture.CaptureOrderResponse;
 import com.example.demo.paypal.res.error.capture.PaypalCaptureErrorRes;
 import com.example.demo.pojo.CaptureOrderRes;
 import com.example.demo.util.JsonUtil;
 import com.example.demo.util.PaypalOrderUtil;
-import com.hulkhiretech.payments.paypal.res.capture.CaptureOrderResponse;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import com.example.demo.pojo.CaptureOrderRes;
 import com.example.demo.pojo.CreateOrderReq;
 import com.example.demo.pojo.CreateOrderRes;
+import com.example.demo.pojo.ShowOrderRes;
 
 @Service
 public interface PaymentService {
@@ -13,4 +14,5 @@ public interface PaymentService {
 
 	public CaptureOrderRes captureOrder(String orderId);
 
+	public ShowOrderRes showOrder(String orderId);
 }
