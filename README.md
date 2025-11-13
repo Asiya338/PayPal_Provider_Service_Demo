@@ -79,6 +79,7 @@ Actuator (Health, Metrics)
 
 ---
 
+
 ## 🔐 PayPal Credentials Setup
 
 Add in `application.properties`:
@@ -96,6 +97,7 @@ export PAYPAL_CLIENT_SECRET=your_secret
 ```
 
 🚀 Features Implemented
+
 ✔️ 1. OAuth Token Generation
 
 Retrieves OAuth token using PayPal Client ID + Secret
@@ -175,18 +177,28 @@ Enabled endpoints:
 
 These helped monitor application readiness and performance.
 
+------------------
 
 🎯 How to Run the Application
+
 1️⃣ Set environment variables:
+```
 PAYPAL_CLIENT_ID=XXXXX
 PAYPAL_CLIENT_SECRET=XXXXX
+```
 
 2️⃣ Build the project:
+```
 mvn clean package
+```
 
 3️⃣ Run the jar:
+```
 java -jar target/paypal-provider-service.jar
+```
 
+
+------------------
 📝 Upcoming Enhancements
 
 Add Redis caching for OAuth token
