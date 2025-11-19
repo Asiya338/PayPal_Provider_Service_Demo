@@ -9,7 +9,8 @@ A production-style Spring Boot microservice that integrates with **PayPal REST A
 - 🚦 Error Handling  
 - 🧪 Testing with Postman  
 - 📘 Swagger + OpenAPI Documentation  
-- 📊 Spring Boot Actuator Monitoring  
+- 📊 Spring Boot Actuator Monitoring
+- Redis Cache for optimized accessToken storage and retrieval 
 
 This project is part of my **Java + Spring Boot + Microservices Training Journey** (Sprint 2).
 
@@ -179,6 +180,13 @@ These helped monitor application readiness and performance.
 
 ------------------
 
+Add Redis caching for OAuth token
+1️⃣ add dependency, enable cahcing in main class
+2️⃣ add cacheable value in TokenService
+3️⃣ run redis in docker, now accessToken will be stored in redis
+
+------------------
+
 🎯 How to Run the Application
 
 1️⃣ Set environment variables:
@@ -201,7 +209,6 @@ java -jar target/paypal-provider-service.jar
 ------------------
 📝 Upcoming Enhancements
 
-Add Redis caching for OAuth token
 
 Add Resilience4j retry + circuit breaker
 
