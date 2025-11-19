@@ -48,7 +48,7 @@ public class PaymentServiceImpl implements PaymentService {
 		log.info("Create order request in payment service impl || CreateOrderReq : {} ", createOrderReq);
 
 		accessToken = tokenService.getAccessToken();
-		log.info("access_token from token service : {} ", accessToken);
+		log.info("access_token from token service ");
 
 		HttpRequest httpRequest = createOrderHelperReq.prepareCreateOrderReq(createOrderReq, accessToken);
 
@@ -65,7 +65,10 @@ public class PaymentServiceImpl implements PaymentService {
 	public CaptureOrderRes captureOrder(String orderId) {
 		log.info("order Id in Capture Order request : {} ", orderId);
 
-		createOrderResValidator.validateOrderRes(createOrderRes);
+//		createOrderResValidator.validateOrderRes(createOrderRes);
+
+		accessToken = tokenService.getAccessToken();
+		log.info("access_token from token service ");
 
 		ResponseEntity<String> httpResponse = httpServiceEngine
 				.makeHttpCall(captureOrderHelperReq.prepareCaptureOrderReq(orderId, accessToken));
@@ -80,6 +83,9 @@ public class PaymentServiceImpl implements PaymentService {
 	@Override
 	public ShowOrderRes showOrder(String orderId) {
 		log.info("order Id in SHOW Order request : {} ", orderId);
+
+		accessToken = tokenService.getAccessToken();
+		log.info("access_token from token service ");
 
 		ResponseEntity<String> httpResponse = httpServiceEngine
 				.makeHttpCall(showOrderHelperReq.prepareCaptureOrderReq(orderId, accessToken));

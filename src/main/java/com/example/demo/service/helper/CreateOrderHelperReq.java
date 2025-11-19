@@ -74,7 +74,7 @@ public class CreateOrderHelperReq {
 
 		// Prepare Amount + PurchaseUnit
 		Amount amount = new Amount();
-//		amount.setCurrencyCode(createOrderReq.getCurrencyCode());
+		amount.setCurrencyCode(createOrderReq.getCurrencyCode());
 		String value = String.format(Constant.TWO_DECIMAL_FORMAT, createOrderReq.getAmount());
 		amount.setValue(value);
 

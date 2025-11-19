@@ -29,4 +29,7 @@ public class Constant {
 
 	public static final String PAYER_ACTION_REQUIRED = "PAYER_ACTION_REQUIRED";
 
+	public static final String PAYPAL_ACCESS_TOKEN = "access_token";
+
+	public static final int PAYPAL_ACCESS_TOKEN_EXPIRY_DIFF = 300;
 }
