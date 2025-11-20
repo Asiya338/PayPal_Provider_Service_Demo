@@ -23,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class TokenService {
 
-	private final RedisService redisService;
+//	private final RedisService redisService;
 	private final JsonUtil jsonUtil;
 	private final HttpServiceEngine httpServiceEngine;
 
@@ -38,9 +38,17 @@ public class TokenService {
 
 //	@Cacheable(value = "paypalToken") // name of redis to store accessToken
 	public String getAccessToken() {
+
+		log.trace("tracing");
+		log.debug("debugging");
+		log.info("info");
+		log.warn("wraning");
+		log.error("error ");
+
 		log.info("getting access token from TOKEN SERVICE");
 
-		String accessToken = redisService.getValue(Constant.PAYPAL_ACCESS_TOKEN);
+//		String accessToken = redisService.getValue(Constant.PAYPAL_ACCESS_TOKEN);
+		String accessToken = null;
 		if (accessToken != null) {
 			log.info("Getting Access Token from redis cache... ");
 
@@ -58,8 +66,8 @@ public class TokenService {
 		PaypalOAuthToken token = jsonUtil.fromJson(httpResponse.getBody(), PaypalOAuthToken.class);
 
 		accessToken = token.getAccessToken();
-		redisService.setValueWithExpiry(Constant.PAYPAL_ACCESS_TOKEN, accessToken,
-				token.getExpiresIn() - Constant.PAYPAL_ACCESS_TOKEN_EXPIRY_DIFF);
+//		redisService.setValueWithExpiry(Constant.PAYPAL_ACCESS_TOKEN, accessToken,
+//				token.getExpiresIn() - Constant.PAYPAL_ACCESS_TOKEN_EXPIRY_DIFF);
 
 		log.info("New access token generated and stored in Redis");
 

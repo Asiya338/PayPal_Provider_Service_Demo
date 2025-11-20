@@ -1,0 +1,30 @@
+[INFO ] 2025-11-20 13:00:19.581 [File Watcher] [paypal-provider-service] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 3 class path changes (0 additions, 0 deletions, 3 modifications)
+[INFO ] 2025-11-20 13:00:19.610 [Thread-5] [paypal-provider-service] org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[INFO ] 2025-11-20 13:00:19.616 [tomcat-shutdown] [paypal-provider-service] org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8083"]
+[INFO ] 2025-11-20 13:00:19.640 [tomcat-shutdown] [paypal-provider-service] org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+[INFO ] 2025-11-20 13:00:19.644 [Thread-5] [paypal-provider-service] org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8083"]
+[INFO ] 2025-11-20 13:00:20.118 [restartedMain] [paypal-provider-service] com.example.demo.PayPalProviderServiceDemoApplication - Starting PayPalProviderServiceDemoApplication using Java 21.0.7 with PID 3668 (D:\SpringWebProj\PayPalProviderServiceDemo\target\classes started by DELL in D:\SpringWebProj\PayPalProviderServiceDemo)
+[DEBUG] 2025-11-20 13:00:20.118 [restartedMain] [paypal-provider-service] com.example.demo.PayPalProviderServiceDemoApplication - Running with Spring Boot v3.5.7, Spring v6.2.12
+[INFO ] 2025-11-20 13:00:20.118 [restartedMain] [paypal-provider-service] com.example.demo.PayPalProviderServiceDemoApplication - The following 1 profile is active: "local"
+[INFO ] 2025-11-20 13:00:20.952 [restartedMain] [paypal-provider-service] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+[INFO ] 2025-11-20 13:00:20.953 [restartedMain] [paypal-provider-service] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[INFO ] 2025-11-20 13:00:20.963 [restartedMain] [paypal-provider-service] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+[INFO ] 2025-11-20 13:00:21.132 [restartedMain] [paypal-provider-service] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8083 (http)
+[INFO ] 2025-11-20 13:00:21.136 [restartedMain] [paypal-provider-service] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+[INFO ] 2025-11-20 13:00:21.137 [restartedMain] [paypal-provider-service] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] 2025-11-20 13:00:21.137 [restartedMain] [paypal-provider-service] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.48]
+[INFO ] 2025-11-20 13:00:21.189 [restartedMain] [paypal-provider-service] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2025-11-20 13:00:21.190 [restartedMain] [paypal-provider-service] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1059 ms
+[INFO ] 2025-11-20 13:00:21.433 [restartedMain] [paypal-provider-service] com.example.demo.config.CustomConfig - Redis cache configuration ...
+[INFO ] 2025-11-20 13:00:21.525 [restartedMain] [paypal-provider-service] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+[INFO ] 2025-11-20 13:00:21.909 [restartedMain] [paypal-provider-service] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 2025-11-20 13:00:21.917 [restartedMain] [paypal-provider-service] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 13 endpoints beneath base path '/actuator'
+[INFO ] 2025-11-20 13:00:21.973 [restartedMain] [paypal-provider-service] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+[INFO ] 2025-11-20 13:00:21.980 [restartedMain] [paypal-provider-service] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8083 (http) with context path '/'
+[INFO ] 2025-11-20 13:00:22.010 [restartedMain] [paypal-provider-service] com.example.demo.PayPalProviderServiceDemoApplication - Started PayPalProviderServiceDemoApplication in 2.031 seconds (process running for 530.862)
+[INFO ] 2025-11-20 13:00:22.016 [restartedMain] [paypal-provider-service] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+[INFO ] 2025-11-20 13:40:51.080 [RMI TCP Connection(64)-127.0.0.1] [paypal-provider-service] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[INFO ] 2025-11-20 13:40:51.095 [RMI TCP Connection(64)-127.0.0.1] [paypal-provider-service] org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[INFO ] 2025-11-20 13:40:51.099 [tomcat-shutdown] [paypal-provider-service] org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8083"]
+[INFO ] 2025-11-20 13:40:51.124 [tomcat-shutdown] [paypal-provider-service] org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+[INFO ] 2025-11-20 13:40:51.127 [RMI TCP Connection(64)-127.0.0.1] [paypal-provider-service] org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8083"]

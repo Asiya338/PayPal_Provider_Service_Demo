@@ -102,7 +102,21 @@
     			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
+	    <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
 
+		<dependency>
+    			<groupId>io.micrometer</groupId>
+    			<artifactId>micrometer-tracing</artifactId>
+		</dependency>
+
+<!-- Micrometer Tracing Bridge for Brave -->
+		<dependency>
+    			<groupId>io.micrometer</groupId>
+    			<artifactId>micrometer-tracing-bridge-brave</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
