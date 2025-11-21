@@ -1,0 +1,5 @@
+[INFO ] 2025-11-20 17:07:28.137 [RMI TCP Connection(43)-127.0.0.1] [paypal-provider-service-PPS] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[INFO ] 2025-11-20 17:07:28.148 [RMI TCP Connection(43)-127.0.0.1] [paypal-provider-service-PPS] org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[INFO ] 2025-11-20 17:07:28.150 [tomcat-shutdown] [paypal-provider-service-PPS] org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8083"]
+[INFO ] 2025-11-20 17:07:28.167 [tomcat-shutdown] [paypal-provider-service-PPS] org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+[INFO ] 2025-11-20 17:07:28.169 [RMI TCP Connection(43)-127.0.0.1] [paypal-provider-service-PPS] org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8083"]

@@ -10,6 +10,7 @@ import org.springframework.web.client.RestClient;
 import com.example.demo.constant.ErrorCodeEnum;
 import com.example.demo.exception.PayPalProviderException;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,6 +21,7 @@ public class HttpServiceEngine {
 
 	private final RestClient restClient;
 
+	@CircuitBreaker(name = "paypal-provider-service", fallbackMethod = "fallbackPaypalService")
 	public ResponseEntity<String> makeHttpCall(HttpRequest httpRequest) {
 
 		try {
@@ -46,6 +48,14 @@ public class HttpServiceEngine {
 			throw new PayPalProviderException(ErrorCodeEnum.PAYPAL_SERVICE_UNAVAILABLE.getErrorCode(),
 					ErrorCodeEnum.PAYPAL_SERVICE_UNAVAILABLE.getErrorMessage(), HttpStatus.SERVICE_UNAVAILABLE);
 		}
+	}
+
+	public ResponseEntity<String> fallbackPaypalService(HttpRequest httpRequest, Throwable t) {
+		log.error("Fallback method called due to || fallbackPaypalService : {} ", t.getMessage(), t);
+
+		throw new PayPalProviderException(ErrorCodeEnum.PAYPAL_SERVICE_UNAVAILABLE.getErrorCode(),
+				ErrorCodeEnum.PAYPAL_SERVICE_UNAVAILABLE.getErrorMessage(), HttpStatus.SERVICE_UNAVAILABLE);
 
 	}
+
 }
