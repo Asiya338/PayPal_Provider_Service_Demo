@@ -212,9 +212,11 @@ java -jar target/paypal-provider-service.jar
 -------------------
 Added Resilience4j retry + circuit breaker
 
-Implemented Circuit Breaker mechanism, with statuses CLOSED, OPEN, HALF-OPEN
-when api call made to PayPal External System
-Added fallbackMethod to handle no response or timeout cases
+1️⃣ Implemented Circuit Breaker mechanism, with statuses CLOSED, OPEN, HALF-OPEN
+
+2️⃣ when api call made to PayPal External System
+
+3️⃣ Added fallbackMethod to handle no response or timeout cases
 
 
 ------------------
