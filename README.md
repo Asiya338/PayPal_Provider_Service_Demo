@@ -12,6 +12,7 @@ A production-style Spring Boot microservice that integrates with **PayPal REST A
 - 📊 Spring Boot Actuator Monitoring
 - Redis Cache for optimized accessToken storage and retreival
 - Added Resilience4j retry + circuit breaker
+- Registered as Eureka client
 
 This project is part of my **Java + Spring Boot + Microservices Training Journey** (Sprint 2).
 
@@ -210,7 +211,7 @@ java -jar target/paypal-provider-service.jar
 ```
 
 -------------------
-Added Resilience4j retry + circuit breaker
+# Added Resilience4j retry + circuit breaker
 
 1️⃣ Implemented Circuit Breaker mechanism, with statuses CLOSED, OPEN, HALF-OPEN
 
@@ -220,8 +221,45 @@ Added Resilience4j retry + circuit breaker
 
 
 ------------------
+# Registered as Eureka client
+    
+Registered Paypal-Provider-Service as Eureka client
+
+add eureka client dependency, add dependency management
+```
+<dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+</dependency>
+
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-dependencies</artifactId>
+            <version>2024.0.1</version> <!-- Use a version compatible with Spring Boot 3.4.2 -->
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+
+```
+
+@EnableDiscoveryClient in main application class
+
+add corresponding configuration in local profile
+```
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka
+eureka.client.register-with-eureka=true
+eureka.client.fetch-registry=true
+eureka.instance.prefer-ip-address=true
+eureka.instance.instance-id=${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+```
+
+---------------------
 
 📝 Upcoming Enhancements
 
-Add eureka service registry
+
 Add unit tests using JUnit + Mockito
