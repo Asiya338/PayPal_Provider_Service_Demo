@@ -1,0 +1,7 @@
+[INFO ] 2025-11-28 13:29:46.451 [main] [paypal-provider-service] com.example.demo.PayPalProviderServiceDemoApplicationTests - Starting PayPalProviderServiceDemoApplicationTests using Java 21.0.7 with PID 14988 (started by DELL in D:\SpringWebProj\PayPalProviderServiceDemo)
+[DEBUG] 2025-11-28 13:29:46.461 [main] [paypal-provider-service] com.example.demo.PayPalProviderServiceDemoApplicationTests - Running with Spring Boot v3.4.2, Spring v6.2.2
+[INFO ] 2025-11-28 13:29:46.464 [main] [paypal-provider-service] com.example.demo.PayPalProviderServiceDemoApplicationTests - The following 1 profile is active: "local"
+[INFO ] 2025-11-28 13:29:50.958 [main] [paypal-provider-service] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+[INFO ] 2025-11-28 13:29:50.974 [main] [paypal-provider-service] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[INFO ] 2025-11-28 13:29:51.141 [main] [paypal-provider-service] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 77 ms. Found 0 Redis repository interfaces.
+[INFO ] 2025-11-28 13:29:52.525 [main] [paypal-provider-service] org.springframework.cloud.context.scope.GenericScope - BeanFactory id=c1ee06ab-50c1-3a85-8001-0b4192054def

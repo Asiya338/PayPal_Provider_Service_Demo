@@ -17,7 +17,8 @@ public enum ErrorCodeEnum {
 	CREATE_ID_ERROR("30010", "Order ID must not be null"),
 	CREATE_STATUS_ERROR("30011", "Order status must be valid and cannot be null"),
 	CREATE_URL_ERROR("30012", "Order response must have redirection url to capture order"),
-	RESOURCE_NOT_FOUND("30013", "Resource not found, Please try with correct request");
+	RESOURCE_NOT_FOUND("30013", "Resource not found, Please try with correct request"),
+	CREATE_ORDER_REQ_NULL("30014", "CreateOrderReq can't be null/blank");
 
 	private final String errorCode;
 	private final String errorMessage;

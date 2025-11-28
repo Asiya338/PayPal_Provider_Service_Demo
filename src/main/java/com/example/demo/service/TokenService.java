@@ -23,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class TokenService {
 
-//	private final RedisService redisService;
+	private final RedisService redisService;
 	private final JsonUtil jsonUtil;
 	private final HttpServiceEngine httpServiceEngine;
 
@@ -47,8 +47,7 @@ public class TokenService {
 
 		log.info("getting access token from TOKEN SERVICE");
 
-//		String accessToken = redisService.getValue(Constant.PAYPAL_ACCESS_TOKEN);
-		String accessToken = null;
+		String accessToken = redisService.getValue(Constant.PAYPAL_ACCESS_TOKEN);
 		if (accessToken != null) {
 			log.info("Getting Access Token from redis cache... ");
 
@@ -66,29 +65,27 @@ public class TokenService {
 		PaypalOAuthToken token = jsonUtil.fromJson(httpResponse.getBody(), PaypalOAuthToken.class);
 
 		accessToken = token.getAccessToken();
-//		redisService.setValueWithExpiry(Constant.PAYPAL_ACCESS_TOKEN, accessToken,
-//				token.getExpiresIn() - Constant.PAYPAL_ACCESS_TOKEN_EXPIRY_DIFF);
-
 		log.info("New access token generated and stored in Redis");
 
 		return accessToken;
 	}
 
-	private HttpRequest prepareHttpRequest(HttpHeaders headers) {
+	HttpRequest prepareHttpRequest(HttpHeaders headers) {
 		HttpRequest httpRequest = new HttpRequest();
 
 		MultiValueMap<String, String> bodyValue = new LinkedMultiValueMap<>();
-
 		bodyValue.add(Constant.GRANT_TYPE, Constant.CLIENT_CREDENTIALS);
+
 		httpRequest.setUrl(oauthUrl);
 		httpRequest.setHttpMethod(HttpMethod.POST);
 		httpRequest.setHeaders(headers);
 		httpRequest.setBody(bodyValue);
+
 		log.info("Http request : {} ", httpRequest);
 		return httpRequest;
 	}
 
-	private HttpHeaders prepareHttpHeader() {
+	HttpHeaders prepareHttpHeader() {
 		HttpHeaders headers = new HttpHeaders();
 
 		headers.setBasicAuth(clientId, clientSecret);

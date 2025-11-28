@@ -1,0 +1,70 @@
+[ERROR] 2025-11-20 16:02:56.824 [restartedMain] [paypal-provider-service] org.springframework.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@1305df0c - There is no conversion supplier registered for conversion word [x]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@1305df0c - [x] is not a valid conversion word
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@1305df0c - There is no conversion supplier registered for conversion word [x]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@1305df0c - [x] is not a valid conversion word
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:353)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.example.demo.PayPalProviderServiceDemoApplication.main(PayPalProviderServiceDemoApplication.java:12)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@1305df0c - There is no conversion supplier registered for conversion word [x]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@1305df0c - [x] is not a valid conversion word
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@1305df0c - There is no conversion supplier registered for conversion word [x]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@1305df0c - [x] is not a valid conversion word
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:289)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:267)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:81)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:61)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:195)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 22 common frames omitted
+[INFO ] 2025-11-20 16:08:33.455 [restartedMain] [paypal-provider-service] com.example.demo.PayPalProviderServiceDemoApplication - Starting PayPalProviderServiceDemoApplication using Java 21.0.7 with PID 10112 (D:\SpringWebProj\PayPalProviderServiceDemo\target\classes started by DELL in D:\SpringWebProj\PayPalProviderServiceDemo)
+[DEBUG] 2025-11-20 16:08:33.458 [restartedMain] [paypal-provider-service] com.example.demo.PayPalProviderServiceDemoApplication - Running with Spring Boot v3.5.7, Spring v6.2.12
+[INFO ] 2025-11-20 16:08:33.459 [restartedMain] [paypal-provider-service] com.example.demo.PayPalProviderServiceDemoApplication - The following 1 profile is active: "local"
+[INFO ] 2025-11-20 16:08:33.601 [restartedMain] [paypal-provider-service] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 2025-11-20 16:08:33.602 [restartedMain] [paypal-provider-service] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 2025-11-20 16:08:39.028 [restartedMain] [paypal-provider-service] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+[INFO ] 2025-11-20 16:08:39.036 [restartedMain] [paypal-provider-service] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[INFO ] 2025-11-20 16:08:39.127 [restartedMain] [paypal-provider-service] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43 ms. Found 0 Redis repository interfaces.
+[INFO ] 2025-11-20 16:08:40.442 [restartedMain] [paypal-provider-service] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8083 (http)
+[INFO ] 2025-11-20 16:08:40.480 [restartedMain] [paypal-provider-service] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+[INFO ] 2025-11-20 16:08:40.485 [restartedMain] [paypal-provider-service] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] 2025-11-20 16:08:40.486 [restartedMain] [paypal-provider-service] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.48]
+[INFO ] 2025-11-20 16:08:40.635 [restartedMain] [paypal-provider-service] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2025-11-20 16:08:40.637 [restartedMain] [paypal-provider-service] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 7033 ms
+[INFO ] 2025-11-20 16:08:43.044 [restartedMain] [paypal-provider-service] com.example.demo.config.CustomConfig - Redis cache configuration ...
+[INFO ] 2025-11-20 16:08:43.395 [restartedMain] [paypal-provider-service] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+[INFO ] 2025-11-20 16:08:45.012 [restartedMain] [paypal-provider-service] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 2025-11-20 16:08:45.053 [restartedMain] [paypal-provider-service] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 13 endpoints beneath base path '/actuator'
+[INFO ] 2025-11-20 16:08:45.226 [restartedMain] [paypal-provider-service] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+[INFO ] 2025-11-20 16:08:45.264 [restartedMain] [paypal-provider-service] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8083 (http) with context path '/'
+[INFO ] 2025-11-20 16:08:45.302 [restartedMain] [paypal-provider-service] com.example.demo.PayPalProviderServiceDemoApplication - Started PayPalProviderServiceDemoApplication in 13.435 seconds (process running for 16.047)
+[INFO ] 2025-11-20 16:08:46.423 [RMI TCP Connection(10)-127.0.0.1] [paypal-provider-service] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2025-11-20 16:08:46.425 [RMI TCP Connection(10)-127.0.0.1] [paypal-provider-service] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2025-11-20 16:08:46.433 [RMI TCP Connection(10)-127.0.0.1] [paypal-provider-service] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+[INFO ] 2025-11-20 16:09:16.254 [File Watcher] [paypal-provider-service] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[INFO ] 2025-11-20 16:09:16.277 [Thread-5] [paypal-provider-service] org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[INFO ] 2025-11-20 16:09:16.284 [tomcat-shutdown] [paypal-provider-service] org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8083"]
+[INFO ] 2025-11-20 16:09:16.301 [tomcat-shutdown] [paypal-provider-service] org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+[INFO ] 2025-11-20 16:09:16.307 [Thread-5] [paypal-provider-service] org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8083"]

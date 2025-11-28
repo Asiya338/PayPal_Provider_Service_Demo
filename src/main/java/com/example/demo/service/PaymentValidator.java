@@ -14,6 +14,14 @@ import lombok.extern.slf4j.Slf4j;
 public class PaymentValidator {
 
 	public void validateService(CreateOrderReq createOrderReq) {
+
+		if (createOrderReq == null) {
+			log.error("CreateOrderReq can't be null/blank");
+			throw new PayPalProviderException(ErrorCodeEnum.CREATE_ORDER_REQ_NULL.getErrorCode(),
+					ErrorCodeEnum.CREATE_ORDER_REQ_NULL.getErrorMessage(), HttpStatus.BAD_REQUEST);
+
+		}
+
 		if (createOrderReq.getCurrencyCode() == null || createOrderReq.getCurrencyCode().isBlank()) {
 			log.error("Currency code is required field and can't be null/blank");
 			throw new PayPalProviderException(ErrorCodeEnum.CURRENCY_CODE_REQUIRED.getErrorCode(),
