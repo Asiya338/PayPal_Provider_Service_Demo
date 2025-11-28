@@ -22,7 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ShowOrderHelperRes {
 	private final JsonUtil jsonUtil;
 
-	private ShowOrderRes toShowResponse(ShowOrderResponse showOrderResponse) {
+	ShowOrderRes toShowResponse(ShowOrderResponse showOrderResponse) {
 		ShowOrderRes showOrderRes = new ShowOrderRes();
 		showOrderRes.setOrderId(showOrderResponse.getId());
 		showOrderRes.setPaymentStatus(showOrderResponse.getStatus());

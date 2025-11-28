@@ -1,7 +1,10 @@
 package com.example.demo.util;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
+import com.example.demo.constant.ErrorCodeEnum;
+import com.example.demo.exception.PayPalProviderException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.RequiredArgsConstructor;
@@ -19,7 +22,8 @@ public class JsonUtil {
 			return objectMapper.writeValueAsString(obj);
 		} catch (Exception e) {
 			log.error("Error converting to json : {} ", e.getMessage(), e);
-			throw new RuntimeException("ERROR CONVERTING TO JSON" + e.getMessage());
+			throw new PayPalProviderException(ErrorCodeEnum.TO_JSON_ERROR.getErrorCode(),
+					ErrorCodeEnum.TO_JSON_ERROR.getErrorMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
 
@@ -28,7 +32,8 @@ public class JsonUtil {
 			return objectMapper.readValue(json, clazz);
 		} catch (Exception e) {
 			log.error("Error converting from json to : {} ", e.getMessage(), e);
-			throw new RuntimeException("ERROR CONVERTING FROM JSON TO:" + e.getMessage());
+			throw new PayPalProviderException(ErrorCodeEnum.FROM_JSON_ERROR.getErrorCode(),
+					ErrorCodeEnum.FROM_JSON_ERROR.getErrorMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
 }

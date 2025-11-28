@@ -30,7 +30,7 @@ public class CaptureOrderHelperReq {
 		return httpRequest;
 	}
 
-	private HttpRequest prepareCaptureRequest(String orderId, HttpHeaders httpHeaders) {
+	HttpRequest prepareCaptureRequest(String orderId, HttpHeaders httpHeaders) {
 		HttpRequest httpRequest = new HttpRequest();
 		httpRequest.setHttpMethod(HttpMethod.POST);
 		httpRequest.setUrl(captureUrl.replace(Constant.ORDER_ID, orderId));
@@ -40,7 +40,7 @@ public class CaptureOrderHelperReq {
 		return httpRequest;
 	}
 
-	private HttpHeaders prepareCaptureHeader(String accessToken) {
+	HttpHeaders prepareCaptureHeader(String accessToken) {
 		HttpHeaders httpHeaders = new HttpHeaders();
 		httpHeaders.setBearerAuth(accessToken);
 		httpHeaders.setContentType(MediaType.APPLICATION_JSON);

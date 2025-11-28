@@ -41,23 +41,23 @@ public class CreateOrderHelperRes {
 		log.info("Handling PayPal response in PayPalServiceImpl  || httpResponse : {}", httpResponse);
 
 		if (httpResponse.getStatusCode().is2xxSuccessful()) {
-			PaypalOrder paypalOrderRes = jsonUtil.fromJson(httpResponse.getBody(), PaypalOrder.class);
-			log.info("Converted Response Body to PaypalOrder : {}", paypalOrderRes);
+			try {
+				PaypalOrder paypalOrderRes = jsonUtil.fromJson(httpResponse.getBody(), PaypalOrder.class);
 
-			CreateOrderRes createOrderRes = toOrderResponse(paypalOrderRes);
-			log.info("Create order response  || CreateOrderRes : {}", createOrderRes);
+				CreateOrderRes createOrderRes = toOrderResponse(paypalOrderRes);
 
-			if (createOrderRes != null && createOrderRes.getOrderId() != null && !createOrderRes.getOrderId().isEmpty()
-					&& createOrderRes.getPaymentStatus().equalsIgnoreCase(Constant.PAYER_ACTION_REQUIRED)
-					&& createOrderRes.getRedirectUrl() != null && !createOrderRes.getRedirectUrl().isEmpty()) {
+				if (createOrderRes != null && createOrderRes.getOrderId() != null
+						&& !createOrderRes.getOrderId().isEmpty() && createOrderRes.getPaymentStatus() != null
+						&& createOrderRes.getPaymentStatus().equalsIgnoreCase(Constant.PAYER_ACTION_REQUIRED)
+						&& createOrderRes.getRedirectUrl() != null && !createOrderRes.getRedirectUrl().isEmpty()) {
 
-				log.info("Created order successful with status PAYER_ACTION_REQUIRED : {} ", createOrderRes);
-				return createOrderRes;
+					return createOrderRes;
+				}
 
+			} catch (Exception e) {
+				throw new PayPalProviderException(ErrorCodeEnum.PAYPAL_UNKNOWN_ERROR.getErrorCode(),
+						ErrorCodeEnum.PAYPAL_UNKNOWN_ERROR.getErrorMessage(), HttpStatus.GATEWAY_TIMEOUT);
 			}
-
-			log.error("Order creation failed or incomplete details recieved || PayPalOrderResponse : {} ",
-					createOrderRes);
 		}
 
 		if (httpResponse.getStatusCode().is4xxClientError() || httpResponse.getStatusCode().is5xxServerError()) {

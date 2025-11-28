@@ -67,6 +67,9 @@ public class TokenService {
 		accessToken = token.getAccessToken();
 		log.info("New access token generated and stored in Redis");
 
+		redisService.setValueWithExpiry(Constant.PAYPAL_ACCESS_TOKEN, accessToken,
+				token.getExpiresIn() - Constant.PAYPAL_ACCESS_TOKEN_EXPIRY_DIFF);
+
 		return accessToken;
 	}
 

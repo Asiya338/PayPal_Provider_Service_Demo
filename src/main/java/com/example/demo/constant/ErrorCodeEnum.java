@@ -16,7 +16,7 @@ public enum ErrorCodeEnum {
 	CREATE_RESPONSE_ERROR("30009", "Create Order request has to be created and response must not be null"),
 	CREATE_ID_ERROR("30010", "Order ID must not be null"),
 	CREATE_STATUS_ERROR("30011", "Order status must be valid and cannot be null"),
-	CREATE_URL_ERROR("30012", "Order response must have redirection url to capture order"),
+	CREATE_URL_ERROR("30012", "paypal Order response must have redirection url to capture order"),
 	RESOURCE_NOT_FOUND("30013", "Resource not found, Please try with correct request"),
 	CREATE_ORDER_REQ_NULL("30014", "CreateOrderReq can't be null/blank");
 

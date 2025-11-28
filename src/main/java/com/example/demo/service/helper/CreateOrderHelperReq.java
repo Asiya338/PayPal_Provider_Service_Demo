@@ -34,11 +34,9 @@ public class CreateOrderHelperReq {
 	public String createOrderUrl;
 
 	public HttpRequest prepareCreateOrderReq(CreateOrderReq createOrderReq, String accessToken) {
-		String requestAsJson;
-
 		HttpHeaders headers = prepareHeader(accessToken);
 
-		requestAsJson = prepareReqBodyAsJson(createOrderReq);
+		String requestAsJson = prepareReqBodyAsJson(createOrderReq);
 		log.info("Create Order Request JSON: \n{}", requestAsJson);
 
 		HttpRequest httpRequest = new HttpRequest();
@@ -52,8 +50,7 @@ public class CreateOrderHelperReq {
 		return httpRequest;
 	}
 
-	private String prepareReqBodyAsJson(CreateOrderReq createOrderReq) {
-		String requestAsJson;
+	String prepareReqBodyAsJson(CreateOrderReq createOrderReq) {
 		// Prepare ExperienceContext
 		ExperienceContext context = new ExperienceContext();
 
@@ -90,11 +87,10 @@ public class CreateOrderHelperReq {
 		log.info("create order request object : {}", order);
 
 		// Convert to JSON
-		requestAsJson = jsonUtil.toJson(order);
-		return requestAsJson;
+		return jsonUtil.toJson(order);
 	}
 
-	private HttpHeaders prepareHeader(String accessToken) {
+	HttpHeaders prepareHeader(String accessToken) {
 		HttpHeaders headers = new HttpHeaders();
 
 		String uuid = UUID.randomUUID().toString();

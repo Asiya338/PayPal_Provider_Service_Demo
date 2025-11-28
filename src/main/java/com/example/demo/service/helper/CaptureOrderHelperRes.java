@@ -22,7 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 public class CaptureOrderHelperRes {
 	private final JsonUtil jsonUtil;
 
-	private CaptureOrderRes toCaptureResponse(CaptureOrderResponse captureOrderResponse) {
+	CaptureOrderRes toCaptureResponse(CaptureOrderResponse captureOrderResponse) {
 		CaptureOrderRes captureOrderRes = new CaptureOrderRes();
 		captureOrderRes.setOrderId(captureOrderResponse.getId());
 		captureOrderRes.setPaymentStatus(captureOrderResponse.getStatus());

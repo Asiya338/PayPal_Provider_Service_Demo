@@ -2,6 +2,8 @@ package com.example.demo.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -12,6 +14,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.util.ReflectionTestUtils;
@@ -46,10 +49,11 @@ class TokenServiceTest {
 		HttpRequest httpRequest = tokenService.prepareHttpRequest(headers);
 
 		assertNotNull(httpRequest);
-		assert httpRequest.getUrl().equals("https://api-m.sandbox.paypal.com/v1/oauth2/token");
-		assert httpRequest.getHttpMethod().name().equals("POST");
-		assert httpRequest.getHeaders() == headers;
-		assert httpRequest.getBody() != null;
+		assertEquals("https://api-m.sandbox.paypal.com/v1/oauth2/token", httpRequest.getUrl());
+		assertEquals(HttpMethod.POST, httpRequest.getHttpMethod());
+		assertSame(headers, httpRequest.getHeaders()); // same object reference
+		assertNotNull(httpRequest.getBody());
+
 	}
 
 	@Test
@@ -62,9 +66,10 @@ class TokenServiceTest {
 		HttpHeaders headers = tokenService.prepareHttpHeader();
 
 		assertNotNull(headers);
-		assert headers.getContentType().equals(MediaType.APPLICATION_FORM_URLENCODED);
-		assert headers.getFirst(HttpHeaders.AUTHORIZATION).startsWith("Basic ");
-		assert headers.size() == 2;
+		assertTrue(headers.getFirst(HttpHeaders.AUTHORIZATION).startsWith("Basic "));
+		assertEquals(MediaType.APPLICATION_FORM_URLENCODED, headers.getContentType());
+
+		assertEquals(2, headers.size());
 	}
 
 	@Test
