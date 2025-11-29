@@ -13,6 +13,7 @@ A production-style Spring Boot microservice that integrates with **PayPal REST A
 - Redis Cache for optimized accessToken storage and retreival
 - Added Resilience4j retry + circuit breaker
 - Registered as Eureka client
+- Add unit tests using JUnit + Mockito
 
 This project is part of my **Java + Spring Boot + Microservices Training Journey** (Sprint 2).
 
@@ -256,10 +257,10 @@ eureka.client.fetch-registry=true
 eureka.instance.prefer-ip-address=true
 eureka.instance.instance-id=${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
 ```
+--------------------
+# Add unit tests using JUnit + Mockito
 
----------------------
+Implemented unit testing on functional code developed using `Junit` and applied mocking using `Mockito`. ensured code coverage upto 85%.
+Applied unit test on service, implementation, helper, exception classes.
 
-📝 Upcoming Enhancements
 
-
-Add unit tests using JUnit + Mockito
