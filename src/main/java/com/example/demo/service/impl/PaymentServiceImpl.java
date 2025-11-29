@@ -88,7 +88,7 @@ public class PaymentServiceImpl implements PaymentService {
 		log.info("access_token from token service ");
 
 		ResponseEntity<String> httpResponse = httpServiceEngine
-				.makeHttpCall(showOrderHelperReq.prepareCaptureOrderReq(orderId, accessToken));
+				.makeHttpCall(showOrderHelperReq.prepareShowOrderReq(orderId, accessToken));
 		log.info("Http Response for Show Order : {} ", httpResponse);
 
 		ShowOrderRes showOrderRes = showOrderHelperRes.prepareShowResponse(httpResponse);

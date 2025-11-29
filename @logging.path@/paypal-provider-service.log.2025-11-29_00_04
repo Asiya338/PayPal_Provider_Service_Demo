@@ -1,12 +1,12 @@
-[INFO ] 2025-11-29 11:59:20.081 [main] [paypal-provider-service] com.example.demo.exception.GlobalExceptionHandlerTest - Starting GlobalExceptionHandlerTest using Java 21.0.7 with PID 13284 (started by DELL in D:\SpringWebProj\PayPalProviderServiceDemo)
-[DEBUG] 2025-11-29 11:59:20.096 [main] [paypal-provider-service] com.example.demo.exception.GlobalExceptionHandlerTest - Running with Spring Boot v3.4.2, Spring v6.2.2
-[INFO ] 2025-11-29 11:59:20.099 [main] [paypal-provider-service] com.example.demo.exception.GlobalExceptionHandlerTest - The following 1 profile is active: "local"
-[INFO ] 2025-11-29 11:59:24.182 [main] [paypal-provider-service] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-[INFO ] 2025-11-29 11:59:26.756 [main] [paypal-provider-service] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
-[INFO ] 2025-11-29 11:59:26.757 [main] [paypal-provider-service] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
-[INFO ] 2025-11-29 11:59:26.769 [main] [paypal-provider-service] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 6 ms
-[INFO ] 2025-11-29 11:59:26.907 [main] [paypal-provider-service] com.example.demo.exception.GlobalExceptionHandlerTest - Started GlobalExceptionHandlerTest in 9.602 seconds (process running for 15.805)
-[ERROR] 2025-11-29 11:59:30.363 [main] [paypal-provider-service] com.example.demo.exception.GlobalExceptionHandler - Handling ResourceNotFound Exception: Resource missing
+[INFO ] 2025-11-29 00:04:27.763 [main] [paypal-provider-service] com.example.demo.exception.GlobalExceptionHandlerTest - Starting GlobalExceptionHandlerTest using Java 21.0.7 with PID 10256 (started by DELL in D:\SpringWebProj\PayPalProviderServiceDemo)
+[DEBUG] 2025-11-29 00:04:27.783 [main] [paypal-provider-service] com.example.demo.exception.GlobalExceptionHandlerTest - Running with Spring Boot v3.4.2, Spring v6.2.2
+[INFO ] 2025-11-29 00:04:27.785 [main] [paypal-provider-service] com.example.demo.exception.GlobalExceptionHandlerTest - The following 1 profile is active: "local"
+[INFO ] 2025-11-29 00:04:31.477 [main] [paypal-provider-service] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+[INFO ] 2025-11-29 00:04:32.752 [main] [paypal-provider-service] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+[INFO ] 2025-11-29 00:04:32.753 [main] [paypal-provider-service] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+[INFO ] 2025-11-29 00:04:32.759 [main] [paypal-provider-service] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 3 ms
+[INFO ] 2025-11-29 00:04:32.829 [main] [paypal-provider-service] com.example.demo.exception.GlobalExceptionHandlerTest - Started GlobalExceptionHandlerTest in 8.301 seconds (process running for 13.47)
+[ERROR] 2025-11-29 00:04:35.764 [main] [paypal-provider-service] com.example.demo.exception.GlobalExceptionHandler - Handling ResourceNotFound Exception: Resource missing
 com.example.demo.exception.ResourceNotFoundException: Resource missing
 	at com.example.demo.exception.ExceptionTestController.throwNotFound(ExceptionTestController.java:19)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -109,7 +109,7 @@ com.example.demo.exception.ResourceNotFoundException: Resource missing
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:748)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:443)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:211)
-[ERROR] 2025-11-29 11:59:30.970 [main] [paypal-provider-service] com.example.demo.exception.GlobalExceptionHandler - Handling Exception : Something went wrong 
+[ERROR] 2025-11-29 00:04:36.082 [main] [paypal-provider-service] com.example.demo.exception.GlobalExceptionHandler - Handling Exception : Something went wrong 
 java.lang.RuntimeException: Something went wrong
 	at com.example.demo.exception.ExceptionTestController.throwGeneric(ExceptionTestController.java:24)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -212,7 +212,7 @@ java.lang.RuntimeException: Something went wrong
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:748)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:443)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:211)
-[ERROR] 2025-11-29 11:59:31.008 [main] [paypal-provider-service] com.example.demo.exception.GlobalExceptionHandler - Handling PayPalProviderException: PayPal failure
+[ERROR] 2025-11-29 00:04:36.102 [main] [paypal-provider-service] com.example.demo.exception.GlobalExceptionHandler - Handling PayPalProviderException: PayPal failure
 com.example.demo.exception.PayPalProviderException: PayPal failure
 	at com.example.demo.exception.ExceptionTestController.throwProcessingError(ExceptionTestController.java:14)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -315,85 +315,73 @@ com.example.demo.exception.PayPalProviderException: PayPal failure
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:748)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:443)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:211)
-[DEBUG] 2025-11-29 11:59:32.491 [main] [paypal-provider-service] com.example.demo.service.TokenService - debugging
-[INFO ] 2025-11-29 11:59:32.491 [main] [paypal-provider-service] com.example.demo.service.TokenService - info
-[WARN ] 2025-11-29 11:59:32.491 [main] [paypal-provider-service] com.example.demo.service.TokenService - wraning
-[ERROR] 2025-11-29 11:59:32.492 [main] [paypal-provider-service] com.example.demo.service.TokenService - error 
-[INFO ] 2025-11-29 11:59:32.493 [main] [paypal-provider-service] com.example.demo.service.TokenService - getting access token from TOKEN SERVICE
-[INFO ] 2025-11-29 11:59:32.521 [main] [paypal-provider-service] com.example.demo.service.TokenService - No accessToken found in redis, making OAuth api call to PayPal...
-[INFO ] 2025-11-29 11:59:32.524 [main] [paypal-provider-service] com.example.demo.service.TokenService - Http request : HttpRequest(url=https://api.sandbox.paypal.com/oauth2/token, httpMethod=POST, headers=[Authorization:"Basic ZHVtbXktY2xpZW50LWlkOmR1bW15LWNsaWVudC1zZWNyZXQ=", Content-Type:"application/x-www-form-urlencoded"], body={grant_type=[client_credentials]}) 
-[INFO ] 2025-11-29 11:59:32.550 [main] [paypal-provider-service] com.example.demo.service.TokenService - New access token generated and stored in Redis
-[INFO ] 2025-11-29 11:59:32.695 [main] [paypal-provider-service] com.example.demo.service.TokenService - Http request : HttpRequest(url=https://api-m.sandbox.paypal.com/v1/oauth2/token, httpMethod=POST, headers=[], body={grant_type=[client_credentials]}) 
-[DEBUG] 2025-11-29 11:59:32.735 [main] [paypal-provider-service] com.example.demo.service.TokenService - debugging
-[INFO ] 2025-11-29 11:59:32.736 [main] [paypal-provider-service] com.example.demo.service.TokenService - info
-[WARN ] 2025-11-29 11:59:32.737 [main] [paypal-provider-service] com.example.demo.service.TokenService - wraning
-[ERROR] 2025-11-29 11:59:32.738 [main] [paypal-provider-service] com.example.demo.service.TokenService - error 
-[INFO ] 2025-11-29 11:59:32.738 [main] [paypal-provider-service] com.example.demo.service.TokenService - getting access token from TOKEN SERVICE
-[INFO ] 2025-11-29 11:59:32.740 [main] [paypal-provider-service] com.example.demo.service.TokenService - Getting Access Token from redis cache... 
-[ERROR] 2025-11-29 11:59:32.785 [main] [paypal-provider-service] com.example.demo.service.CreateOrderResValidator - create order res must not be null : null 
-[ERROR] 2025-11-29 11:59:32.809 [main] [paypal-provider-service] com.example.demo.service.CreateOrderResValidator - Create order redirect Url is null
-[ERROR] 2025-11-29 11:59:32.821 [main] [paypal-provider-service] com.example.demo.service.CreateOrderResValidator - Create order response id is null
-[ERROR] 2025-11-29 11:59:32.830 [main] [paypal-provider-service] com.example.demo.service.CreateOrderResValidator - Create order response status is null
-[ERROR] 2025-11-29 11:59:32.847 [main] [paypal-provider-service] com.example.demo.service.PaymentValidator - CancelUrl is required field and can't be null/blank
-[ERROR] 2025-11-29 11:59:32.857 [main] [paypal-provider-service] com.example.demo.service.PaymentValidator - Amount is required field and can't be negative
-[ERROR] 2025-11-29 11:59:32.879 [main] [paypal-provider-service] com.example.demo.service.PaymentValidator - Currency code is required field and can't be null/blank
-[ERROR] 2025-11-29 11:59:32.889 [main] [paypal-provider-service] com.example.demo.service.PaymentValidator - ReturnUrl is required field and can't be null/blank
-[ERROR] 2025-11-29 11:59:32.896 [main] [paypal-provider-service] com.example.demo.service.PaymentValidator - CreateOrderReq can't be null/blank
-[INFO ] 2025-11-29 11:59:32.987 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperReq - http request for capture order : HttpRequest(url=https://api-m.sandbox.paypal.com/v1/orders/ORD_1234/capture, httpMethod=POST, headers=[Authorization:"Bearer accessToken", Content-Type:"application/json", PayPal-Request-Id:"b2316a77-1a1c-4146-b852-8aa6ac31fc85"], body={}) 
-[INFO ] 2025-11-29 11:59:33.037 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperReq - create order request object : OrderRequest(intent=CAPTURE, purchaseUnits=[PurchaseUnits(amount=Amount(currencyCode=USD, value=109.90))], paymentSource=PaymentSource(paypal=Paypal(experienceContext=ExperienceContext(paymentMethodPreference=IMMEDIATE_PAYMENT_REQUIRED, landingPage=LOGIN, shippingPreference=NO_SHIPPING, userAction=PAY_NOW, returnUrl=https://merchant.returnUrl.com, cancelUrl=https://merchant.cancelurl.com))))
-[INFO ] 2025-11-29 11:59:33.054 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperReq - Create Order Request JSON: 
+[DEBUG] 2025-11-29 00:04:37.420 [main] [paypal-provider-service] com.example.demo.service.TokenService - debugging
+[INFO ] 2025-11-29 00:04:37.421 [main] [paypal-provider-service] com.example.demo.service.TokenService - info
+[WARN ] 2025-11-29 00:04:37.421 [main] [paypal-provider-service] com.example.demo.service.TokenService - wraning
+[ERROR] 2025-11-29 00:04:37.421 [main] [paypal-provider-service] com.example.demo.service.TokenService - error 
+[INFO ] 2025-11-29 00:04:37.421 [main] [paypal-provider-service] com.example.demo.service.TokenService - getting access token from TOKEN SERVICE
+[INFO ] 2025-11-29 00:04:37.472 [main] [paypal-provider-service] com.example.demo.service.TokenService - No accessToken found in redis, making OAuth api call to PayPal...
+[INFO ] 2025-11-29 00:04:37.481 [main] [paypal-provider-service] com.example.demo.service.TokenService - Http request : HttpRequest(url=https://api.sandbox.paypal.com/oauth2/token, httpMethod=POST, headers=[Authorization:"Basic ZHVtbXktY2xpZW50LWlkOmR1bW15LWNsaWVudC1zZWNyZXQ=", Content-Type:"application/x-www-form-urlencoded"], body={grant_type=[client_credentials]}) 
+[INFO ] 2025-11-29 00:04:37.524 [main] [paypal-provider-service] com.example.demo.service.TokenService - New access token generated and stored in Redis
+[INFO ] 2025-11-29 00:04:37.934 [main] [paypal-provider-service] com.example.demo.service.TokenService - Http request : HttpRequest(url=https://api-m.sandbox.paypal.com/v1/oauth2/token, httpMethod=POST, headers=[], body={grant_type=[client_credentials]}) 
+[DEBUG] 2025-11-29 00:04:37.983 [main] [paypal-provider-service] com.example.demo.service.TokenService - debugging
+[INFO ] 2025-11-29 00:04:37.984 [main] [paypal-provider-service] com.example.demo.service.TokenService - info
+[WARN ] 2025-11-29 00:04:37.984 [main] [paypal-provider-service] com.example.demo.service.TokenService - wraning
+[ERROR] 2025-11-29 00:04:37.985 [main] [paypal-provider-service] com.example.demo.service.TokenService - error 
+[INFO ] 2025-11-29 00:04:37.985 [main] [paypal-provider-service] com.example.demo.service.TokenService - getting access token from TOKEN SERVICE
+[INFO ] 2025-11-29 00:04:37.987 [main] [paypal-provider-service] com.example.demo.service.TokenService - Getting Access Token from redis cache... 
+[ERROR] 2025-11-29 00:04:38.056 [main] [paypal-provider-service] com.example.demo.service.CreateOrderResValidator - create order res must not be null : null 
+[ERROR] 2025-11-29 00:04:38.084 [main] [paypal-provider-service] com.example.demo.service.CreateOrderResValidator - Create order redirect Url is null
+[ERROR] 2025-11-29 00:04:38.096 [main] [paypal-provider-service] com.example.demo.service.CreateOrderResValidator - Create order response id is null
+[ERROR] 2025-11-29 00:04:38.108 [main] [paypal-provider-service] com.example.demo.service.CreateOrderResValidator - Create order response status is null
+[ERROR] 2025-11-29 00:04:38.161 [main] [paypal-provider-service] com.example.demo.service.PaymentValidator - CancelUrl is required field and can't be null/blank
+[ERROR] 2025-11-29 00:04:38.214 [main] [paypal-provider-service] com.example.demo.service.PaymentValidator - Amount is required field and can't be negative
+[ERROR] 2025-11-29 00:04:38.263 [main] [paypal-provider-service] com.example.demo.service.PaymentValidator - Currency code is required field and can't be null/blank
+[ERROR] 2025-11-29 00:04:38.274 [main] [paypal-provider-service] com.example.demo.service.PaymentValidator - ReturnUrl is required field and can't be null/blank
+[ERROR] 2025-11-29 00:04:38.290 [main] [paypal-provider-service] com.example.demo.service.PaymentValidator - CreateOrderReq can't be null/blank
+[INFO ] 2025-11-29 00:04:38.394 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperReq - http request for capture order : HttpRequest(url=https://api-m.sandbox.paypal.com/v1/orders/ORD_1234/capture, httpMethod=POST, headers=[Authorization:"Bearer accessToken", Content-Type:"application/json", PayPal-Request-Id:"5852df99-07fb-4c3a-997e-10cbb5211a45"], body={}) 
+[INFO ] 2025-11-29 00:04:38.449 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperReq - create order request object : OrderRequest(intent=CAPTURE, purchaseUnits=[PurchaseUnits(amount=Amount(currencyCode=USD, value=109.90))], paymentSource=PaymentSource(paypal=Paypal(experienceContext=ExperienceContext(paymentMethodPreference=IMMEDIATE_PAYMENT_REQUIRED, landingPage=LOGIN, shippingPreference=NO_SHIPPING, userAction=PAY_NOW, returnUrl=https://merchant.returnUrl.com, cancelUrl=https://merchant.cancelurl.com))))
+[INFO ] 2025-11-29 00:04:38.470 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperReq - Create Order Request JSON: 
 null
-[INFO ] 2025-11-29 11:59:33.055 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperReq - Prepared HTTP Request for Create Order : HttpRequest(url=https://api-m.sandbox.paypal.com/v1/orders, httpMethod=POST, headers=[PayPal-Request-Id:"6d6fef31-6703-485c-8091-402668aac9c1", Authorization:"Bearer accessToken", Content-Type:"application/json"], body=null) 
-[INFO ] 2025-11-29 11:59:33.076 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperReq - create order request object : OrderRequest(intent=CAPTURE, purchaseUnits=[PurchaseUnits(amount=Amount(currencyCode=USD, value=109.90))], paymentSource=PaymentSource(paypal=Paypal(experienceContext=ExperienceContext(paymentMethodPreference=IMMEDIATE_PAYMENT_REQUIRED, landingPage=LOGIN, shippingPreference=NO_SHIPPING, userAction=PAY_NOW, returnUrl=https://merchant.com/.returnUrl, cancelUrl=https://merchant.com/cancelurl))))
-[INFO ] 2025-11-29 11:59:33.107 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperReq - http request for show order : HttpRequest(url=https://api-m.sandbox.paypal.com/v1/orders/ORD_1234, httpMethod=GET, headers=[Authorization:"Bearer accessToken", Content-Type:"application/json", PayPal-Request-Id:"3cb7eee6-b07f-4836-aba5-547c9afbaa5c"], body=) 
-[INFO ] 2025-11-29 11:59:33.138 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperRes - Handling PayPal response in PayPalServiceImpl  || httpResponse : <200 OK OK,invalid-response,[]>
-[INFO ] 2025-11-29 11:59:33.158 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperRes - Handling PayPal response in PayPalServiceImpl  || httpResponse : <200 OK OK,success,[]>
-[INFO ] 2025-11-29 11:59:33.170 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperRes - Handling PayPal response in PayPalServiceImpl  || httpResponse : <404 NOT_FOUND Not Found,[]>
-[ERROR] 2025-11-29 11:59:33.171 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperRes - Recieved 4xx, 5xx Error response from Paypal service
-[ERROR] 2025-11-29 11:59:33.172 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperRes - Converted Response Body to PaypalOrder : PayPalErrorResponse(error=null, errorDescription=null, name=null, message=4xx | 5xx error occured while creating order... , debugId=null, details=null, links=null)
-[ERROR] 2025-11-29 11:59:33.183 [main] [paypal-provider-service] com.example.demo.util.PaypalOrderUtil - Paypal Create Error Response : PayPalErrorResponse(error=null, errorDescription=null, name=null, message=4xx | 5xx error occured while creating order... , debugId=null, details=null, links=null) 
-[INFO ] 2025-11-29 11:59:33.183 [main] [paypal-provider-service] com.example.demo.util.PaypalOrderUtil - Summary of paypal error response : Message: 4xx | 5xx error occured while creating order...  
-[INFO ] 2025-11-29 11:59:33.184 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperRes - Error message from paypal error response  :  Message: 4xx | 5xx error occured while creating order...   
-[ERROR] 2025-11-29 11:59:33.184 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperRes - Error response recieved form Paypal service|| Status Code: 404 NOT_FOUND , Response Body : null  
-[INFO ] 2025-11-29 11:59:33.200 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Http Response for Capture Order request : <200 OK OK,success,[]> 
-[INFO ] 2025-11-29 11:59:33.202 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Capture Order response from paypal : CaptureOrderResponse(id=123, status=PAYER_ACTION_REQUIRED, paymentSource=null, pruchaseUnits=null, payer=null, links=null) 
-[INFO ] 2025-11-29 11:59:33.203 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Capture Order request || CaptureOrderRes : CaptureOrderRes(orderId=123, paymentStatus=PAYER_ACTION_REQUIRED) 
-[INFO ] 2025-11-29 11:59:33.204 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Capture Order response with required fields and status COMPLETED : CaptureOrderRes(orderId=123, paymentStatus=PAYER_ACTION_REQUIRED) 
-[INFO ] 2025-11-29 11:59:33.214 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Http Response for Capture Order request : <404 NOT_FOUND Not Found,[]> 
-[ERROR] 2025-11-29 11:59:33.215 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Recieved 4xx, 5xx error from paypal capture order response 
-[ERROR] 2025-11-29 11:59:33.217 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Paypal capture order error response recieved : PaypalCaptureErrorRes(name=null, details=null, message=4xx | 5xx error occured while capturing order... , debugId=null, links=null) 
-[ERROR] 2025-11-29 11:59:33.225 [main] [paypal-provider-service] com.example.demo.util.PaypalOrderUtil - PayPal Capture Order Error Response : PaypalCaptureErrorRes(name=null, details=null, message=4xx | 5xx error occured while capturing order... , debugId=null, links=null)
-[INFO ] 2025-11-29 11:59:33.226 [main] [paypal-provider-service] com.example.demo.util.PaypalOrderUtil - Summary of PayPal Capture Error Response : Message: 4xx | 5xx error occured while capturing order... 
-[ERROR] 2025-11-29 11:59:33.226 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Error Message from paypal : Message: 4xx | 5xx error occured while capturing order...  
-[ERROR] 2025-11-29 11:59:33.226 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Error response recieved PaypalCaptureErrorRes || Status Code : 404 NOT_FOUND , Error response  Body : null 
-[INFO ] 2025-11-29 11:59:33.237 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Http Response for Capture Order request : <200 OK OK,invalid-response,[]> 
-[INFO ] 2025-11-29 11:59:33.239 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Capture Order response from paypal : CaptureOrderResponse(id=null, status=null, paymentSource=null, pruchaseUnits=null, payer=null, links=null) 
-[INFO ] 2025-11-29 11:59:33.240 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Capture Order request || CaptureOrderRes : CaptureOrderRes(orderId=null, paymentStatus=null) 
-[ERROR] 2025-11-29 11:59:33.240 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Error in capturing order request : || PayPalCaptureOrderResponse  CaptureOrderRes(orderId=null, paymentStatus=null) 
-[INFO ] 2025-11-29 11:59:33.267 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Http Response for Show Order request : <404 NOT_FOUND Not Found,[]> 
-[ERROR] 2025-11-29 11:59:33.268 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Recieved 4xx, 5xx error from paypal show order response 
-[ERROR] 2025-11-29 11:59:33.269 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Paypal showing order error response recieved : PaypalShowErrorRes(name=null, details=null, message=4xx | 5xx error occured while fetching order... , debugId=null, links=null) 
-[ERROR] 2025-11-29 11:59:33.271 [main] [paypal-provider-service] com.example.demo.util.PaypalOrderUtil - PayPal Capture Order Error Response : PaypalShowErrorRes(name=null, details=null, message=4xx | 5xx error occured while fetching order... , debugId=null, links=null)
-[INFO ] 2025-11-29 11:59:33.272 [main] [paypal-provider-service] com.example.demo.util.PaypalOrderUtil - Summary of PayPal Capture Error Response : Message: 4xx | 5xx error occured while fetching order... 
-[ERROR] 2025-11-29 11:59:33.272 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Error Message from paypal : Message: 4xx | 5xx error occured while fetching order...  
-[ERROR] 2025-11-29 11:59:33.273 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Error response recieved PaypaShowErrorRes || Status Code : 404 NOT_FOUND , Error response  Body : null 
-[INFO ] 2025-11-29 11:59:33.293 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Http Response for Show Order request : <200 OK OK,invalid-response,[]> 
-[INFO ] 2025-11-29 11:59:33.295 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Show Order response from paypal : ShowOrderResponse(id=null, intent=null, status=null, paymentSource=null, purchaseUnits=null, createTime=null, links=null) 
-[INFO ] 2025-11-29 11:59:33.296 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Show Order request || showOrderRes : ShowOrderRes(orderId=null, paymentStatus=null) 
-[ERROR] 2025-11-29 11:59:33.297 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Error in showing order request : || PayPalShowOrderResponse  ShowOrderRes(orderId=null, paymentStatus=null) 
-[INFO ] 2025-11-29 11:59:33.309 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Http Response for Show Order request : <200 OK OK,success,[]> 
-[INFO ] 2025-11-29 11:59:33.310 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Show Order response from paypal : ShowOrderResponse(id=123, intent=null, status=AAPROVED, paymentSource=null, purchaseUnits=null, createTime=null, links=null) 
-[INFO ] 2025-11-29 11:59:33.311 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Show Order request || showOrderRes : ShowOrderRes(orderId=123, paymentStatus=AAPROVED) 
-[INFO ] 2025-11-29 11:59:33.313 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Show Order response with required fields  : ShowOrderRes(orderId=123, paymentStatus=AAPROVED) 
-[INFO ] 2025-11-29 11:59:34.364 [main] [paypal-provider-service] com.example.demo.service.impl.PaymentServiceImpl - order Id in Capture Order request : ORD_1234 
-[INFO ] 2025-11-29 11:59:34.365 [main] [paypal-provider-service] com.example.demo.service.impl.PaymentServiceImpl - access_token from token service 
-[INFO ] 2025-11-29 11:59:34.367 [main] [paypal-provider-service] com.example.demo.service.impl.PaymentServiceImpl - Http Response for Capture Order : null 
-[INFO ] 2025-11-29 11:59:34.368 [main] [paypal-provider-service] com.example.demo.service.impl.PaymentServiceImpl - Capture Order Response || CaptureOrderRes : CaptureOrderRes(orderId=ORD_1234, paymentStatus=PAYER_ACTION_REQUIRED)  
-[INFO ] 2025-11-29 11:59:34.397 [main] [paypal-provider-service] com.example.demo.service.impl.PaymentServiceImpl - order Id in SHOW Order request : ORD_1234 
-[INFO ] 2025-11-29 11:59:34.398 [main] [paypal-provider-service] com.example.demo.service.impl.PaymentServiceImpl - access_token from token service 
-[INFO ] 2025-11-29 11:59:34.400 [main] [paypal-provider-service] com.example.demo.service.impl.PaymentServiceImpl - Http Response for Show Order : null 
-[INFO ] 2025-11-29 11:59:34.401 [main] [paypal-provider-service] com.example.demo.service.impl.PaymentServiceImpl - Show Order Response || ShowOrderRes : ShowOrderRes(orderId=ORD_1234, paymentStatus=PAYER_ACTION_REQUIRED)  
-[INFO ] 2025-11-29 11:59:34.451 [main] [paypal-provider-service] com.example.demo.service.impl.PaymentServiceImpl - Create order request in payment service impl || CreateOrderReq : CreateOrderReq(currencyCode=null, amount=0.0, returnUrl=null, cancelUrl=null) 
-[INFO ] 2025-11-29 11:59:34.458 [main] [paypal-provider-service] com.example.demo.service.impl.PaymentServiceImpl - access_token from token service 
-[INFO ] 2025-11-29 11:59:34.460 [main] [paypal-provider-service] com.example.demo.service.impl.PaymentServiceImpl - HTTP Response from Create Order : null  
-[INFO ] 2025-11-29 11:59:34.461 [main] [paypal-provider-service] com.example.demo.service.impl.PaymentServiceImpl - Create order response  || CreateOrderRes : CreateOrderRes(orderId=ORD_1234, paymentStatus=PAYER_ACTION_REQUIRED, redirectUrl=https://paypal.com/redirect)
+[INFO ] 2025-11-29 00:04:38.471 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperReq - Prepared HTTP Request for Create Order : HttpRequest(url=https://api-m.sandbox.paypal.com/v1/orders, httpMethod=POST, headers=[PayPal-Request-Id:"240b8ee9-fa50-4c94-abd9-09d6b68e98a7", Authorization:"Bearer accessToken", Content-Type:"application/json"], body=null) 
+[INFO ] 2025-11-29 00:04:38.500 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperReq - create order request object : OrderRequest(intent=CAPTURE, purchaseUnits=[PurchaseUnits(amount=Amount(currencyCode=USD, value=109.90))], paymentSource=PaymentSource(paypal=Paypal(experienceContext=ExperienceContext(paymentMethodPreference=IMMEDIATE_PAYMENT_REQUIRED, landingPage=LOGIN, shippingPreference=NO_SHIPPING, userAction=PAY_NOW, returnUrl=https://merchant.com/.returnUrl, cancelUrl=https://merchant.com/cancelurl))))
+[INFO ] 2025-11-29 00:04:38.537 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperReq - http request for show order : HttpRequest(url=https://api-m.sandbox.paypal.com/v1/orders/ORD_1234, httpMethod=GET, headers=[Authorization:"Bearer accessToken", Content-Type:"application/json", PayPal-Request-Id:"58437625-82de-4393-a5c5-134e529635bb"], body=) 
+[INFO ] 2025-11-29 00:04:38.637 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperRes - Handling PayPal response in PayPalServiceImpl  || httpResponse : <200 OK OK,invalid-response,[]>
+[INFO ] 2025-11-29 00:04:38.700 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperRes - Handling PayPal response in PayPalServiceImpl  || httpResponse : <200 OK OK,success,[]>
+[INFO ] 2025-11-29 00:04:38.732 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperRes - Handling PayPal response in PayPalServiceImpl  || httpResponse : <404 NOT_FOUND Not Found,[]>
+[ERROR] 2025-11-29 00:04:38.732 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperRes - Recieved 4xx, 5xx Error response from Paypal service
+[ERROR] 2025-11-29 00:04:38.734 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperRes - Converted Response Body to PaypalOrder : PayPalErrorResponse(error=null, errorDescription=null, name=null, message=4xx | 5xx error occured while creating order... , debugId=null, details=null, links=null)
+[ERROR] 2025-11-29 00:04:38.751 [main] [paypal-provider-service] com.example.demo.util.PaypalOrderUtil - Paypal Create Error Response : PayPalErrorResponse(error=null, errorDescription=null, name=null, message=4xx | 5xx error occured while creating order... , debugId=null, details=null, links=null) 
+[INFO ] 2025-11-29 00:04:38.751 [main] [paypal-provider-service] com.example.demo.util.PaypalOrderUtil - Summary of paypal error response : Message: 4xx | 5xx error occured while creating order...  
+[INFO ] 2025-11-29 00:04:38.751 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperRes - Error message from paypal error response  :  Message: 4xx | 5xx error occured while creating order...   
+[ERROR] 2025-11-29 00:04:38.753 [main] [paypal-provider-service] com.example.demo.service.helper.CreateOrderHelperRes - Error response recieved form Paypal service|| Status Code: 404 NOT_FOUND , Response Body : null  
+[INFO ] 2025-11-29 00:04:38.777 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Http Response for Capture Order request : <200 OK OK,success,[]> 
+[INFO ] 2025-11-29 00:04:38.778 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Capture Order response from paypal : CaptureOrderResponse(id=123, status=PAYER_ACTION_REQUIRED, paymentSource=null, pruchaseUnits=null, payer=null, links=null) 
+[INFO ] 2025-11-29 00:04:38.781 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Capture Order request || CaptureOrderRes : CaptureOrderRes(orderId=123, paymentStatus=PAYER_ACTION_REQUIRED) 
+[INFO ] 2025-11-29 00:04:38.782 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Capture Order response with required fields and status COMPLETED : CaptureOrderRes(orderId=123, paymentStatus=PAYER_ACTION_REQUIRED) 
+[INFO ] 2025-11-29 00:04:38.801 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Http Response for Capture Order request : <404 NOT_FOUND Not Found,[]> 
+[ERROR] 2025-11-29 00:04:38.803 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Recieved 4xx, 5xx error from paypal capture order response 
+[ERROR] 2025-11-29 00:04:38.806 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Paypal capture order error response recieved : PaypalCaptureErrorRes(name=null, details=null, message=4xx | 5xx error occured while capturing order... , debugId=null, links=null) 
+[ERROR] 2025-11-29 00:04:38.819 [main] [paypal-provider-service] com.example.demo.util.PaypalOrderUtil - PayPal Capture Order Error Response : PaypalCaptureErrorRes(name=null, details=null, message=4xx | 5xx error occured while capturing order... , debugId=null, links=null)
+[INFO ] 2025-11-29 00:04:38.822 [main] [paypal-provider-service] com.example.demo.util.PaypalOrderUtil - Summary of PayPal Capture Error Response : Message: 4xx | 5xx error occured while capturing order... 
+[ERROR] 2025-11-29 00:04:38.823 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Error Message from paypal : Message: 4xx | 5xx error occured while capturing order...  
+[ERROR] 2025-11-29 00:04:38.823 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Error response recieved PaypalCaptureErrorRes || Status Code : 404 NOT_FOUND , Error response  Body : null 
+[INFO ] 2025-11-29 00:04:38.835 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Http Response for Capture Order request : <200 OK OK,invalid-response,[]> 
+[INFO ] 2025-11-29 00:04:38.837 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Capture Order response from paypal : CaptureOrderResponse(id=null, status=null, paymentSource=null, pruchaseUnits=null, payer=null, links=null) 
+[INFO ] 2025-11-29 00:04:38.839 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Capture Order request || CaptureOrderRes : CaptureOrderRes(orderId=null, paymentStatus=null) 
+[ERROR] 2025-11-29 00:04:38.840 [main] [paypal-provider-service] com.example.demo.service.helper.CaptureOrderHelperRes - Error in capturing order request : || PayPalCaptureOrderResponse  CaptureOrderRes(orderId=null, paymentStatus=null) 
+[INFO ] 2025-11-29 00:04:38.865 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Http Response for Show Order request : <404 NOT_FOUND Not Found,[]> 
+[ERROR] 2025-11-29 00:04:38.867 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Recieved 4xx, 5xx error from paypal show order response 
+[ERROR] 2025-11-29 00:04:38.868 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Paypal showing order error response recieved : PaypalShowErrorRes(name=null, details=null, message=4xx | 5xx error occured while fetching order... , debugId=null, links=null) 
+[ERROR] 2025-11-29 00:04:38.873 [main] [paypal-provider-service] com.example.demo.util.PaypalOrderUtil - PayPal Capture Order Error Response : PaypalShowErrorRes(name=null, details=null, message=4xx | 5xx error occured while fetching order... , debugId=null, links=null)
+[INFO ] 2025-11-29 00:04:38.873 [main] [paypal-provider-service] com.example.demo.util.PaypalOrderUtil - Summary of PayPal Capture Error Response : Message: 4xx | 5xx error occured while fetching order... 
+[ERROR] 2025-11-29 00:04:38.873 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Error Message from paypal : Message: 4xx | 5xx error occured while fetching order...  
+[ERROR] 2025-11-29 00:04:38.874 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Error response recieved PaypaShowErrorRes || Status Code : 404 NOT_FOUND , Error response  Body : null 
+[INFO ] 2025-11-29 00:04:38.891 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Http Response for Show Order request : <200 OK OK,invalid-response,[]> 
+[INFO ] 2025-11-29 00:04:38.893 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Show Order response from paypal : ShowOrderResponse(id=null, intent=null, status=null, paymentSource=null, purchaseUnits=null, createTime=null, links=null) 
+[INFO ] 2025-11-29 00:04:38.895 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Show Order request || showOrderRes : ShowOrderRes(orderId=null, paymentStatus=null) 
+[ERROR] 2025-11-29 00:04:38.897 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Error in showing order request : || PayPalShowOrderResponse  ShowOrderRes(orderId=null, paymentStatus=null) 
+[INFO ] 2025-11-29 00:04:38.907 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Http Response for Show Order request : <200 OK OK,success,[]> 
+[INFO ] 2025-11-29 00:04:38.909 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Show Order response from paypal : ShowOrderResponse(id=123, intent=null, status=AAPROVED, paymentSource=null, purchaseUnits=null, createTime=null, links=null) 
+[INFO ] 2025-11-29 00:04:38.909 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Show Order request || showOrderRes : ShowOrderRes(orderId=123, paymentStatus=AAPROVED) 
+[INFO ] 2025-11-29 00:04:38.910 [main] [paypal-provider-service] com.example.demo.service.helper.ShowOrderHelperRes - Show Order response with required fields  : ShowOrderRes(orderId=123, paymentStatus=AAPROVED) 

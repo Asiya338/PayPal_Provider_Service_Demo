@@ -24,9 +24,9 @@ class ShowOrderHelperReqTest {
 	private ShowOrderHelperReq showOrderHelperReq;
 
 	@Test
-	void prepareCaptureHeaderTest() {
+	void prepareShowHeaderTest() {
 
-		HttpHeaders httpHeaders = showOrderHelperReq.prepareCaptureHeader("accessToken");
+		HttpHeaders httpHeaders = showOrderHelperReq.prepareShowHeader("accessToken");
 
 		assertNotNull(httpHeaders);
 		assertEquals(MediaType.APPLICATION_JSON, httpHeaders.getContentType());
@@ -44,14 +44,14 @@ class ShowOrderHelperReqTest {
 	}
 
 	@Test
-	void prepareCaptureRequestTest() {
+	void prepareShowRequestTest() {
 		String orderId = "ORD_1234";
 		HttpHeaders httpHeaders = new HttpHeaders();
 
 		ReflectionTestUtils.setField(showOrderHelperReq, "showUrl",
 				"https://api-m.sandbox.paypal.com/v1/orders/{orderId}");
 
-		HttpRequest httpRequest = showOrderHelperReq.prepareCaptureRequest(orderId, httpHeaders);
+		HttpRequest httpRequest = showOrderHelperReq.prepareShowRequest(orderId, httpHeaders);
 
 		assertNotNull(httpRequest);
 
@@ -62,13 +62,13 @@ class ShowOrderHelperReqTest {
 	}
 
 	@Test
-	void prepareCaptureOrderReqTest() {
+	void prepareShowOrderReqTest() {
 		String orderId = "ORD_1234";
 
 		ReflectionTestUtils.setField(showOrderHelperReq, "showUrl",
 				"https://api-m.sandbox.paypal.com/v1/orders/{orderId}");
 
-		HttpRequest httpRequest = showOrderHelperReq.prepareCaptureOrderReq(orderId, "accessToken");
+		HttpRequest httpRequest = showOrderHelperReq.prepareShowOrderReq(orderId, "accessToken");
 
 		assertNotNull(httpRequest);
 		assertNotNull(httpRequest.getBody());

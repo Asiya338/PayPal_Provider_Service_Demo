@@ -19,19 +19,20 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RequiredArgsConstructor
 public class ShowOrderHelperReq {
+
 	@Value("${paypal.show.order.url}")
 	private String showUrl;
 
-	public HttpRequest prepareCaptureOrderReq(String orderId, String accessToken) {
-		HttpHeaders httpHeaders = prepareCaptureHeader(accessToken);
+	public HttpRequest prepareShowOrderReq(String orderId, String accessToken) {
+		HttpHeaders httpHeaders = prepareShowHeader(accessToken);
 
-		HttpRequest httpRequest = prepareCaptureRequest(orderId, httpHeaders);
+		HttpRequest httpRequest = prepareShowRequest(orderId, httpHeaders);
 		log.info("http request for show order : {} ", httpRequest);
 
 		return httpRequest;
 	}
 
-	HttpRequest prepareCaptureRequest(String orderId, HttpHeaders httpHeaders) {
+	HttpRequest prepareShowRequest(String orderId, HttpHeaders httpHeaders) {
 		HttpRequest httpRequest = new HttpRequest();
 		httpRequest.setHttpMethod(HttpMethod.GET);
 		httpRequest.setUrl(showUrl.replace(Constant.ORDER_ID, orderId));
@@ -41,7 +42,7 @@ public class ShowOrderHelperReq {
 		return httpRequest;
 	}
 
-	HttpHeaders prepareCaptureHeader(String accessToken) {
+	HttpHeaders prepareShowHeader(String accessToken) {
 		HttpHeaders httpHeaders = new HttpHeaders();
 		httpHeaders.setBearerAuth(accessToken);
 		httpHeaders.setContentType(MediaType.APPLICATION_JSON);
